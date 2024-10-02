@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Điểm Danh Bằng Mã Số</title>
+    <script src="app.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #ketqua {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #matKhauSection {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Điểm Danh Trực Tuyến Bằng Mã Số</h1>
+    <input type="text" id="maSo" placeholder="Nhập mã số của bạn">
+    <button onclick="diemDanh()">Điểm Danh</button>
+    <div id="ketqua"></div>
+
+    <div id="matKhauSection">
+        <input type="password" id="matKhau" placeholder="Nhập mật khẩu để tải file">
+        <button onclick="taiFileExcel()">Tải File Điểm Danh</button>
+    </div>
+</body>
+</html>
