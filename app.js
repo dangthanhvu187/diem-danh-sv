@@ -50,7 +50,7 @@ async function diemDanh() {
 function isValidLocation(lat, lon) {
     const allowedLat = 10.830651631830856; 
     const allowedLon = 106.77545051419781;
-    const radius = 5;
+    const radius = 2.0;
 
     const distance = Math.sqrt(Math.pow(lat - allowedLat, 2) + Math.pow(lon - allowedLon, 2));
     return distance <= radius;
