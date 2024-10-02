@@ -1,6 +1,12 @@
 let ketQuaDiemDanh = [];
 
 async function diemDanh() {
+    // Kiểm tra nếu đã điểm danh
+    if (localStorage.getItem("daDiemDanh") === "true") {
+        document.getElementById('ketqua').innerHTML = "Bạn đã điểm danh rồi, không thể điểm danh lại.";
+        return;
+    }
+
     const maSoNhap = document.getElementById('maSo').value.trim().toUpperCase();
     if (maSoNhap === "") {
         document.getElementById('ketqua').innerHTML = "Vui lòng nhập mã số của bạn.";
@@ -26,6 +32,9 @@ async function diemDanh() {
                         ten: nguoiDung.ten,
                         thoiGian: new Date().toLocaleString()
                     });
+
+                    // Đánh dấu là đã điểm danh trong localStorage
+                    localStorage.setItem("daDiemDanh", "true");
                 } else {
                     document.getElementById('ketqua').innerHTML = "Mã số không có trong danh sách.";
                 }
